@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, NavDropdown, Nav, Navbar } from "react-bootstrap";
-import { Hero, Box, Block, Columns } from "react-bulma-components";
+import { Container, NavDropdown, } from "react-bootstrap";
+import { Hero, Navbar } from "react-bulma-components";
 
 import 'bulma/css/bulma.min.css';
 
@@ -11,10 +11,10 @@ const PageNav = () => {
     <Hero className="is-primary is-medium">
         <Hero.Header>
             <Navbar>
-                <Container>
+                <Navbar.Container>
                     <Navbar.Brand>
                         <a href="/">Santan Cafe </a></Navbar.Brand>
-                </Container>
+                </Navbar.Container>
             </Navbar>
         </Hero.Header>
     </Hero>
