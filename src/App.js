@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/home';
 import Menu from './components/menu';
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+
+import 'bulma/css/bulma.min.css';
 
 
 function App() {
