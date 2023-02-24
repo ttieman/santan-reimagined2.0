@@ -49,6 +49,9 @@ const PageNav = () => {
             </Container>
           </Navbar>
         </Hero.Header>
+        <Hero.Body>
+            <Section>yes it did</Section>
+        </Hero.Body>
       </Hero>
     </div>
   );
