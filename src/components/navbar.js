@@ -14,9 +14,8 @@ import {
 const PageNav = () => {
   return (
     <div>
-      <Hero gradient="true" className="is-dark is-medium">
-        <Hero.Header>
-          <Navbar className="">
+
+          <Navbar className="is-primary">
             <Container>
               <Navbar.Brand className="navbar-brand">
                 <a class="navbar-item" href="https://bulma.io">
@@ -48,11 +47,7 @@ const PageNav = () => {
               </Navbar.Menu>
             </Container>
           </Navbar>
-        </Hero.Header>
-        <Hero.Body>
-            <Section>yes it did</Section>
-        </Hero.Body>
-      </Hero>
+
     </div>
   );
 };

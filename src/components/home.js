@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, NavDropdown, Row, Col, Nav, Navbar } from "react-bootstrap";
+
+import { Hero, Section } from "react-bulma-components";
 
 import PageNav from "./navbar";
 
@@ -7,7 +8,14 @@ const Home = () => {
 	return (
 		<div>
 		<PageNav />
-		
+		<Hero gradient="true" className="is-dark is-medium">
+        <Hero.Header>
+          
+        </Hero.Header>
+        <Hero.Body>
+            <Section>yes it did</Section>
+        </Hero.Body>
+      </Hero>
 		</div>
 		
 	);
