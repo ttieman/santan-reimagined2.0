@@ -2,7 +2,7 @@ import React from "react";
 import { Container, NavDropdown, Nav, Navbar } from "react-bootstrap";
 import { Hero, Box, Block, Columns } from "react-bulma-components";
 
-
+import 'bulma/css/bulma.min.css';
 
 
 
