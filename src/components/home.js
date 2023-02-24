@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, NavDropdown, Row, Col, Nav, Navbar } from "react-bootstrap";
 
+import PageNav from "./navbar";
+
 const Home = () => {
 	return (
 		<Navbar bg="light" expand="lg">
