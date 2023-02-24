@@ -1,19 +1,23 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/home';
-import Menu from './components/menu';
 
-import bulmaCarousel from 'bulma-carousel/dist/js/bulma-carousel.min.js';
+import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
+import Pagenav from "./components/navbar";
+import Home from './components/home';
+
+
 import 'bulma/css/bulma.min.css';
 
 
 function App() {
+  const [activeComponent, setActiveComponent] = useState(<Home />);
+
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/menu" element={ <Menu />}/>
-      </Routes>
+      <div className="App">
+        <Pagenav setActiveComponent={setActiveComponent} />
+        <div className="main">{activeComponent}</div>
+      </div>
     </Router>
   );
 }

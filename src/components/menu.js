@@ -8,7 +8,7 @@ const Menu = () => {
     return (
         <div>
 
-            <PageNav />
+
             
                 <Box>
                     <Tile kind="ancestor" justifyContent='center'>
