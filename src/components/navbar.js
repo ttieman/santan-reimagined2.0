@@ -38,9 +38,10 @@ function PageNav(props) {
 
   return (
     <div>
+      <Hero size="medium" color="dark">
       <Navbar className="is-dark">
         <Container>
-          <Navbar.Brand className="navbar-brand">
+          <Navbar.Brand className="is-size-4 navbar-brand brand-font">
             <a class="navbar-item" href="/">
               <h1>Thesantancafe</h1>
             </a>
@@ -81,13 +82,14 @@ function PageNav(props) {
               <Navbar.Item onClick={() => setActiveComponent(<FoodMenu />)}>
                 Menu
               </Navbar.Item>
-              <Navbar.Item onClick={() => setActiveComponent(<About />)}>
-                About
-              </Navbar.Item>
+              
             </Navbar.Container>
           </Navbar.Menu>
+          
         </Container>
+        
       </Navbar>
+      </Hero>
     </div>
   );
 }

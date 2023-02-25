@@ -1,9 +1,11 @@
 
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import Pagenav from "./components/navbar";
 import Home from './components/home';
+
+
 
 
 import 'bulma/css/bulma.min.css';
@@ -17,6 +19,7 @@ function App() {
       <div className="App">
         <Pagenav setActiveComponent={setActiveComponent} />
         <div className="main">{activeComponent}</div>
+        
       </div>
     </Router>
   );

@@ -7,25 +7,26 @@ import {
   Block,
   Columns,
   Button,
-  Tile,
-  Heading,
   Image,
-  Notification,
+  Content,
 } from "react-bulma-components";
 
 import { AiTwotonePhone } from "react-icons/ai";
 
 import PageNav from "./navbar";
+import About from "./about";
+import Footer from "./footer";
+
 import "../index.css";
 
 const Home = () => {
   return (
     <div>
-      <Hero gradient="true" className="is-dark is-medium">
+      <Hero gradient="true" className="is-light is-medium">
         <Hero.Header></Hero.Header>
         <Hero.Body className="hero-banner">
           <Section>
-            <Columns>
+            <Columns vCentered="true">
               <Columns.Column size="one-third">
                 <Box className="content is-medium">
                   <Block>
@@ -46,56 +47,65 @@ const Home = () => {
                 </Box>
               </Columns.Column>
               <Columns.Column>
-                <Box color="light">
-                  <Tile kind="ancestor" justifyContent="center">
-                    <Tile size="12" >
-                      <Tile kind="parent" justifyContent="center">
-                        <Block px="3">
-                          <Tile
-                            kind="child"
-                            renderAs={Notification}
-                            color="info"
+                <Box color="">
+                  <Columns vCentered="true" className="has-text-centered">
+                    <Columns.Column>
+                      <Box>
+                        <Content className="is-size-4">Breakfast/Lunch</Content>
+                        <Content>
+                          <Columns>
+                            <Columns.Column>
+                              <img src="https://img.icons8.com/external-photo3ideastudio-lineal-color-photo3ideastudio/256/external-egg-and-bacon-cholesterol-photo3ideastudio-lineal-color-photo3ideastudio.png" />
+                            </Columns.Column>
+                            <Columns.Column>
+                              <img src="https://img.icons8.com/cotton/256/beefburger.png" />
+                            </Columns.Column>
+                          </Columns>
+                        </Content>
+                        <Button className="button is-info">Menu</Button>
+                      </Box>
+                    </Columns.Column>
+                    <Columns.Column>
+                      <Box className="">
+                        <Content className="is-size-4">Host Events</Content>
+                        <Block><strong>Plan something special with us!</strong></Block>
+                          <Image
+                            className="is-128x128 is-inline-block"
+                            src="https://img.icons8.com/dusk/256/event-accepted-tentatively.png"
                           >
-                            <Heading className="is-size-4">Host Events</Heading>{" "}
-                            <hr />
-                            <Heading className="is-size-6" subtitle>
-                              {" "}
-                              Fruit and clams
-                            </Heading>
-                          </Tile>
-                        </Block>
-                        <Block px="3">
-                          <Tile
-                            kind="child"
-                            renderAs={Notification}
-                            color="info"
-                          >
-                            <Heading className="is-size-4">Breakfast or Lunch</Heading>{" "}
-                            <hr />
-                            <Heading subtitle>Checkout our <Button>Menu</Button></Heading>
-                          </Tile>
-                        </Block>
-                        <Block px="3">
-                          <Tile
-                            kind="child"
-                            renderAs={Notification}
-                            color="info"
-                          >
-                            <Heading className="is-size-4">Now Hiring</Heading>{" "}
-                            <hr />
-                            <Heading subtitle>With image Tile...</Heading>
-                          </Tile>
-                        </Block>
-                      </Tile>
-                    </Tile>
-                  </Tile>
+                            {" "}
+                          </Image>
+                        
+                        <br />
+                        <a className="button" href="tel:123-456-7890">
+                          <AiTwotonePhone />
+                        </a>
+                      </Box>
+                    </Columns.Column>
+                    <Columns.Column>
+                      <Box>
+                        <Content className="is-size-4">Now Hiring</Content>
+                        <Image
+                          className="is-128x128 is-inline-block"
+                          src="https://img.icons8.com/bubbles/256/cafe.png"
+                        />
+                        <br />
+                        <Button className="button is-info">Apply</Button>
+                      </Box>
+                    </Columns.Column>
+                  </Columns>
                 </Box>
               </Columns.Column>
             </Columns>
-            >
           </Section>
         </Hero.Body>
-        <div class="hero-foot"></div>
+        <About />
+        
+          <Section className="is-dark has-text-centered">
+            wip
+          </Section>
+
+        <Footer />
       </Hero>
     </div>
   );
