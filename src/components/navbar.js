@@ -38,15 +38,11 @@ function PageNav(props) {
 
   return (
     <div>
-      <Navbar className="is-primary">
+      <Navbar className="is-dark">
         <Container>
           <Navbar.Brand className="navbar-brand">
             <a class="navbar-item" href="/">
-              <img
-                src="https://bulma.io/images/bulma-logo.png"
-                width="112"
-                height="28"
-              />
+              <h1>Thesantancafe</h1>
             </a>
 
             <a

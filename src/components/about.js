@@ -16,7 +16,7 @@ const About = () => {
         </Hero.Header>
         <Hero.Body >
 		<div className="hero-banner"	>
-			<Box className="" >Right about now...</Box>
+			<Box >Right about now...</Box>
 		</div>
         </Hero.Body>
 		<div class="hero-foot">
