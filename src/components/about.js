@@ -7,6 +7,7 @@ import {
   Box,
   Content,
   Columns,
+  Container
 } from "react-bulma-components";
 
 import { BiCoffee } from "react-icons/bi";
@@ -19,14 +20,14 @@ const About = () => {
   return (
     <div>
 
-          <Content justifyContent="center">
-            <Section className="is-size-1 has-text-centered">About Us </Section>
+          
+            <Hero className="is-size-1 pt-3 is-info  has-text-centered">About Us</Hero>
             
             <Section>
               <Columns vCentered="true" className="has-text-centered">
                 <Columns.Column>
                   <Block>
-                    <Box>
+                    <Box className="py-6">
                       <Block>
                         <Content size="6">Dedicated to Quality <BiCoffee /></Content>{" "}
                       </Block>
@@ -70,7 +71,7 @@ const About = () => {
                 </Columns.Column>
               </Columns>
             </Section>
-          </Content>
+          
 
     </div>
   );
