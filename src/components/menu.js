@@ -1,105 +1,108 @@
-import React from "react";
-import { Hero, Navbar, Card, Tabs, Heading, Container, Notification, Tile, Image, Block, Box, Section, Columns, Sizes } from "react-bulma-components";
-import PageNav from "./navbar";
-import 'bulma/css/bulma.min.css';
-import { Tab } from "bootstrap";
+import React, { useState } from "react";
+import { Tabs, Notification, Tile, Box, Section, Content } from "react-bulma-components";
+import "bulma/css/bulma.min.css";
+
+import menuItems from "./menuItems.js";
 
 const Menu = () => {
-    return (
-        <div>
+  const [activeTab, setActiveTab] = useState(0);
+  const [tabContent, setTabContent] = useState([
+    {
+      title: "Breakfast",
+      content: (
+        <Box>breakfast junk
+          {menuItems
+            .filter((item) => item.category === "Breakfast")
+            .map((item, index) => (
+              <Box key={index}>
+                <Content>
+                  <p className="title is-4">{item.name}</p>
+                  <p className="subtitle is-6">{item.description}</p>
+                  <p>${item.price}</p>
+                </Content>
+              </Box>
+            ))}
+        </Box>
+      ),
+    },
+    {
+      title: "Lunch",
+      content: (
+        <>
+          {menuItems
+            .filter((item) => item.category === "lunch")
+            .map((item, index) => (
+              <Tile key={index}>
+                <Tile.Content>
+                  <p className="title is-4">{item.name}</p>
+                  <p className="subtitle is-6">{item.description}</p>
+                  <p>${item.price}</p>
+                </Tile.Content>
+              </Tile>
+            ))}
+        </>
+      ),
+    },
+    {
+      title: "Sides",
+      content: (
+        <>
+          {menuItems
+            .filter((item) => item.category === "sides")
+            .map((item, index) => (
+              <Tile key={index}>
+                <Tile.Content>
+                  <p className="title is-4">{item.name}</p>
+                  <p className="subtitle is-6">{item.description}</p>
+                  <p>${item.price}</p>
+                </Tile.Content>
+              </Tile>
+            ))}
+        </>
+      ),
+    },
+    {
+      title: "Drinks",
+      content: (
+        <>
+          {menuItems
+            .filter((item) => item.category === "drinks")
+            .map((item, index) => (
+              <Tile key={index}>
+                <Tile.Content>
+                  <p className="title is-4">{item.name}</p>
+                  <p className="subtitle is-6">{item.description}</p>
+                  <p>${item.price}</p>
+                </Tile.Content>
+              </Tile>
+            ))}
+        </>
+      ),
+    },
+  ]);
 
+  const handleTabClick = (index) => {
+    setActiveTab(index);
+  };
 
-            
-                <Box>
-                    <Tile kind="ancestor" justifyContent='center'>
-                        <Tile size={7} vertical >
-                   
-                            <Tile   justifyContent='center'>
-
-
-                                <Tile kind="parent">
-                                    <Tile kind="child"  renderAs={Notification} color="info">
-                                        <Heading>Middle Tile...</Heading>
-                                        <Heading subtitle>With image Tile...</Heading>
-                                        <Image
-                                            size="4by3"
-                                            src="http://bulma.io/images/placeholders/640x480.png"
-                                        />
-                                    </Tile>
-                                </Tile>
-                                <Tile kind="parent">
-                                    <Tile kind="child" justifyContent="space-between" renderAs={Notification} color="info">
-                                        <Heading>Middle Tile...</Heading>
-                                        <Heading subtitle>With image Tile...</Heading>
-                                        <Image
-                                            size="4by3"
-                                            src="http://bulma.io/images/placeholders/640x480.png"
-                                        />
-                                    </Tile>
-                                </Tile>
-                                
-                                
-                            </Tile>
-                            <Tile   justifyContent='center'>
-
-
-                                <Tile kind="parent">
-                                    <Tile kind="child"  renderAs={Notification} color="info">
-                                        <Heading>Middle Tile...</Heading>
-                                        <Heading subtitle>With image Tile...</Heading>
-                                        <Image
-                                            size="4by3"
-                                            src="http://bulma.io/images/placeholders/640x480.png"
-                                        />
-                                    </Tile>
-                                </Tile>
-                                <Tile kind="parent">
-                                    <Tile kind="child" justifyContent="space-between" renderAs={Notification} color="info">
-                                        <Heading>Middle Tile...</Heading>
-                                        <Heading subtitle>With image Tile...</Heading>
-                                        <Image
-                                            size="4by3"
-                                            src="http://bulma.io/images/placeholders/640x480.png"
-                                        />
-                                    </Tile>
-                                </Tile>
-                                
-                                
-                            </Tile>
-                            <Tile   justifyContent='center'>
-
-
-                                <Tile kind="parent">
-                                    <Tile kind="child"  renderAs={Notification} color="info">
-                                        <Heading>Middle Tile...</Heading>
-                                        <Heading subtitle>With image Tile...</Heading>
-                                        <Image
-                                            size="4by3"
-                                            src="http://bulma.io/images/placeholders/640x480.png"
-                                        />
-                                    </Tile>
-                                </Tile>
-                                <Tile kind="parent">
-                                    <Tile kind="child" justifyContent="space-between" renderAs={Notification} color="info">
-                                        <Heading>Middle Tile...</Heading>
-                                        <Heading subtitle>With image Tile...</Heading>
-                                        <Image
-                                            size="4by3"
-                                            src="http://bulma.io/images/placeholders/640x480.png"
-                                        />
-                                    </Tile>
-                                </Tile>
-                                
-                                
-                                
-                            </Tile>
-                        </Tile>
-                    </Tile>
-                </Box>
-           
-
-        </div>
-    );
+  return (
+    <div>
+      <Section>
+        <Tabs className="is-centered is-boxed is-medium">
+          {tabContent.map((tab, index) => (
+            <Tabs.Tab
+              key={index}
+              active={index === activeTab}
+              onClick={() => handleTabClick(index)}
+            >
+              {tab.title}
+            </Tabs.Tab>
+          ))}
+        </Tabs>
+        <Box>{tabContent[activeTab].content}</Box>
+      </Section>
+    </div>
+  );
 };
 
 export default Menu;
