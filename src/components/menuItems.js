@@ -5,7 +5,7 @@ const menuItems = [
         {
           name: "Pancakes",
           description: "Three fluffy pancakes served with butter and syrup.",
-          price: 5.99,
+          image: "https://www.cookingclassy.com/wp-content/uploads/2021/05/pancakes-03.jpg",
         },
         {
           name: "Waffles",

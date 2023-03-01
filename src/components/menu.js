@@ -23,7 +23,7 @@ const Menu = () => {
             .find((item) => item.category === "Breakfast")
             .items.map((item) => (
                 <Block>
-                <Columns.Column>
+                <Columns.Column className="is-one-third">
                   <Box key={item.name}>
                     <Content
                       renderAs="article"
@@ -33,7 +33,7 @@ const Menu = () => {
                     >
                       <p className="title">{item.name}</p>
                       <p className="subtitle">{item.description}</p>
-                      <p className="subtitle is-6">${item.price.toFixed(2)}</p>
+                      <img src={item.image}  />
                     </Content>
                   </Box>
                 </Columns.Column>
@@ -60,7 +60,7 @@ const Menu = () => {
                     >
                       <p className="title">{item.name}</p>
                       <p className="subtitle">{item.description}</p>
-                      <p className="subtitle is-6">${item.price.toFixed(2)}</p>
+                      
                     </Content>
                   </Box>
                 </Columns.Column>
@@ -87,7 +87,7 @@ const Menu = () => {
                     >
                       <p className="title">{item.name}</p>
                       <p className="subtitle">{item.description}</p>
-                      <p className="subtitle is-6">${item.price.toFixed(2)}</p>
+                      
                     </Content>
                   </Box>
                 </Columns.Column>
@@ -114,7 +114,7 @@ const Menu = () => {
                     >
                       <p className="title">{item.name}</p>
                       <p className="subtitle">{item.description}</p>
-                      <p className="subtitle is-6">${item.price.toFixed(2)}</p>
+                      
                     </Content>
                   </Box>
                 </Columns.Column>
