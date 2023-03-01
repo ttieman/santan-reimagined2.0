@@ -1,5 +1,13 @@
 import React, { useState } from "react";
-import { Tabs, Notification, Tile, Box, Section, Content } from "react-bulma-components";
+import {
+  Tabs,
+  Tile,
+  Box,
+  Section,
+  Content,
+  Columns,
+  Block,
+} from "react-bulma-components";
 import "bulma/css/bulma.min.css";
 
 import menuItems from "./menuItems.js";
@@ -10,17 +18,26 @@ const Menu = () => {
     {
       title: "Breakfast",
       content: (
-        <Box>breakfast junk
+        <Box>
           {menuItems
-            .filter((item) => item.category === "Breakfast")
-            .map((item, index) => (
-              <Box key={index}>
-                <Content>
-                  <p className="title is-4">{item.name}</p>
-                  <p className="subtitle is-6">{item.description}</p>
-                  <p>${item.price}</p>
-                </Content>
-              </Box>
+            .find((item) => item.category === "Breakfast")
+            .items.map((item) => (
+                <Block>
+                <Columns.Column>
+                  <Box key={item.name}>
+                    <Content
+                      renderAs="article"
+                      kind="child"
+                      notification
+                      color="info"
+                    >
+                      <p className="title">{item.name}</p>
+                      <p className="subtitle">{item.description}</p>
+                      <p className="subtitle is-6">${item.price.toFixed(2)}</p>
+                    </Content>
+                  </Box>
+                </Columns.Column>
+              </Block>
             ))}
         </Box>
       ),
@@ -28,55 +45,82 @@ const Menu = () => {
     {
       title: "Lunch",
       content: (
-        <>
+        <Box>
           {menuItems
-            .filter((item) => item.category === "lunch")
-            .map((item, index) => (
-              <Tile key={index}>
-                <Tile.Content>
-                  <p className="title is-4">{item.name}</p>
-                  <p className="subtitle is-6">{item.description}</p>
-                  <p>${item.price}</p>
-                </Tile.Content>
-              </Tile>
+            .find((item) => item.category === "Lunch")
+            .items.map((item) => (
+                <Block>
+                <Columns.Column>
+                  <Box key={item.name}>
+                    <Content
+                      renderAs="article"
+                      kind="child"
+                      notification
+                      color="info"
+                    >
+                      <p className="title">{item.name}</p>
+                      <p className="subtitle">{item.description}</p>
+                      <p className="subtitle is-6">${item.price.toFixed(2)}</p>
+                    </Content>
+                  </Box>
+                </Columns.Column>
+              </Block>
             ))}
-        </>
+        </Box>
       ),
     },
     {
       title: "Sides",
       content: (
-        <>
+        <Box>
           {menuItems
-            .filter((item) => item.category === "sides")
-            .map((item, index) => (
-              <Tile key={index}>
-                <Tile.Content>
-                  <p className="title is-4">{item.name}</p>
-                  <p className="subtitle is-6">{item.description}</p>
-                  <p>${item.price}</p>
-                </Tile.Content>
-              </Tile>
+            .find((item) => item.category === "Sides")
+            .items.map((item) => (
+              <Block>
+                <Columns.Column>
+                  <Box key={item.name}>
+                    <Content
+                      renderAs="article"
+                      kind="child"
+                      notification
+                      color="info"
+                    >
+                      <p className="title">{item.name}</p>
+                      <p className="subtitle">{item.description}</p>
+                      <p className="subtitle is-6">${item.price.toFixed(2)}</p>
+                    </Content>
+                  </Box>
+                </Columns.Column>
+              </Block>
             ))}
-        </>
+        </Box>
       ),
     },
     {
       title: "Drinks",
       content: (
-        <>
+        <Box>
           {menuItems
-            .filter((item) => item.category === "drinks")
-            .map((item, index) => (
-              <Tile key={index}>
-                <Tile.Content>
-                  <p className="title is-4">{item.name}</p>
-                  <p className="subtitle is-6">{item.description}</p>
-                  <p>${item.price}</p>
-                </Tile.Content>
-              </Tile>
+            .find((item) => item.category === "Drinks")
+            .items.map((item) => (
+                <Block>
+                <Columns.Column>
+                  <Box key={item.name}>
+                    <Content
+                      renderAs="article"
+                      kind="child"
+                      notification
+                      color="info"
+                    >
+                      <p className="title">{item.name}</p>
+                      <p className="subtitle">{item.description}</p>
+                      <p className="subtitle is-6">${item.price.toFixed(2)}</p>
+                    </Content>
+                  </Box>
+                </Columns.Column>
+              </Block>
             ))}
-        </>
+        </Box>
       ),
     },
   ]);
@@ -99,7 +143,9 @@ const Menu = () => {
             </Tabs.Tab>
           ))}
         </Tabs>
-        <Box>{tabContent[activeTab].content}</Box>
+        <Box>
+          <Columns>{tabContent[activeTab].content}</Columns>
+        </Box>
       </Section>
     </div>
   );
