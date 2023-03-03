@@ -1,4 +1,6 @@
 import React from "react";
+import apply from "../apply";
+import jQuery from "jquery";
 
 import {
   Hero,
@@ -18,6 +20,7 @@ import About from "./about";
 import Footer from "./footer";
 
 import "../index.css";
+import buttonClick from "../apply";
 
 const Home = () => {
   return (
@@ -103,7 +106,7 @@ const Home = () => {
                           src="https://img.icons8.com/bubbles/256/cafe.png"
                         />
                         <br />
-                        <Button className="button is-info">Apply</Button>
+                        <Button className="js-modal-trigger is-info" data-target='applyModal'>Apply</Button>
                       </Box>
                     </Columns.Column>
                   </Columns>
@@ -116,9 +119,11 @@ const Home = () => {
 
         <Section className="is-dark has-text-centered">wip</Section>
 
+
         <Footer />
       </Hero>
     </div>
+    
   );
 };
 
